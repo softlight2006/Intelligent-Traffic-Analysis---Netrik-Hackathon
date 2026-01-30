@@ -1,1 +1,5 @@
-# Intelligent-Traffic-Analysis---Netrik-Hackathon
+This project presents an end-to-end computer vision–based traffic analytics system designed to analyze CCTV footage from signalized intersections and extract actionable traffic intelligence. The system automatically detects and tracks multiple vehicles, estimates queue length and traffic density, infers signal state from vehicle behavior, and identifies traffic rule violations such as red-light jumping and rash driving.
+
+The solution leverages YOLOv8-based vehicle detection, persistent multi-object tracking, and trajectory-based heuristics to ensure accurate and explainable analytics, even in dense and heterogeneous traffic scenarios commonly seen on Indian roads. Special handling is included for local vehicle types such as auto-rickshaws.
+
+To make insights accessible and interpretable, the system provides annotated video outputs, structured CSV-based analytics logs, and a Streamlit-based web dashboard for visualizing traffic metrics and violation events. The overall design emphasizes modularity, transparency, and scalability, allowing individual components to be independently improved or extended.
