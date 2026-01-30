@@ -1,0 +1,6 @@
+violation_id,vehicle_id,vehicle_type,time,speed_px,queue_length,signal_state
+1,227,truck,15.22,2,5,RED
+2,248,car,17.12,3,7,RED
+3,304,car,18.52,1,7,RED
+4,11,car,20.68,2,5,RED
+5,422,car,21.08,12,6,RED
