@@ -1,5 +1,65 @@
-This project presents an end-to-end computer vision–based traffic analytics system designed to analyze CCTV footage from signalized intersections and extract actionable traffic intelligence. The system automatically detects and tracks multiple vehicles, estimates queue length and traffic density, infers signal state from vehicle behavior, and identifies traffic rule violations such as red-light jumping and rash driving.
+INTRODUCTION
+This project implements an AI-based smart traffic monitoring system that automatically detects traffic signal violations, rash driving behavior, and queue congestion from road surveillance videos.
 
-The solution leverages YOLOv8-based vehicle detection, persistent multi-object tracking, and trajectory-based heuristics to ensure accurate and explainable analytics, even in dense and heterogeneous traffic scenarios commonly seen on Indian roads. Special handling is included for local vehicle types such as auto-rickshaws.
+The system is built from scratch using Computer Vision and Deep Learning, integrates YOLOv8-based vehicle detection & tracking, and provides a real-time Streamlit dashboard for visualization, analytics, and reporting.  
 
-To make insights accessible and interpretable, the system provides annotated video outputs, structured CSV-based analytics logs, and a Streamlit-based web dashboard for visualizing traffic metrics and violation events. The overall design emphasizes modularity, transparency, and scalability, allowing individual components to be independently improved or extended.
+MOTIVATION
+With the rapid increase in vehicles in urban areas, manual traffic monitoring is inefficient, error-prone, and non-scalable.
+Traffic violations such as red-light jumping and rash driving are major contributors to road accidents.
+This project aims to:
+-Reduce manual monitoring
+-Improve enforcement efficiency
+-Provide data-driven traffic insights using AI
+
+OBJECTIVES
+-Automatically detect and track vehicles in traffic videos
+-Identify red-light violations without manual signal input
+-Detect rash driving based on speed estimation
+-Measure queue length and queue density
+-Generate replayable annotated video output
+-Export detailed CSV analytics reports
+-Provide an easy-to-use graphical interface
+
+QUICK START
+
+1️⃣ Clone Repository
+git clone https://github.com/pranav-illendula/Intelligent-Traffic-Analysis---Netrik-Hackathon.git
+cd INTELLIGENT-TRAFFIC-ANALYTICS
+
+2️⃣ Run the Application
+streamlit run app.py
+
+SYSTEM OVERVIEW
+
+System Components:
+-Vehicle Detection & Tracking Module
+-Violation Detection Engine
+-Queue Analysis Module
+-Streamlit Visualization Dashboard
+
+Workflow:
+-Upload traffic video
+-Frame-by-frame vehicle detection & tracking
+-Speed estimation and signal state inference
+-Violation & queue analysis
+-Live visualization + CSV & video output
+
+METHODOLOGY
+1️⃣Vehicle Detection & Tracking
+   -Uses YOLOv8 (Ultralytics) pretrained models
+   -Supports: car, bus, truck, motorcycle
+   -Persistent vehicle IDs across frames
+
+2️⃣Traffic Violation Detection:
+
+Red-Light Jump Detection
+   -Virtual stop-line placed at bottom of frame
+   -Signal state inferred automatically using vehicle motion
+
+Rash Driving Detection
+  -Speed calculated using pixel displacement per second
+  -Vehicles exceeding threshold flagged as rash driving
+
+3️⃣Queue Analysis
+    Queue Length: Count of stopped vehicles before stop line
+    Queue Density: Ratio of occupied vehicle area to road ROI
